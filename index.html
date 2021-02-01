@@ -35,49 +35,48 @@
     </div>
    </div>   	
   </div>
-
+    <script src="scripts/main.js" type="module"></script>
 	<script>
 
-		var tasks = [];
-
-		document.getElementById('add-task').addEventListener('click', addTask);
-		document.getElementById("clear-list").addEventListener('click', function() {
-			tasks = [];
-			listTasks();
-		});
+		//var tasks = [];
+		//document.getElementById('add-task').addEventListener('click', addTask);
+		//document.getElementById("clear-list").addEventListener('click', function() {
+			//tasks = [];
+			//listTasks();
+		//});
 
 
 //Create a new list item when clicking on the add button
-		function addTask() {
+		//function addTask() {
 				
-                let newTask = document.getElementById('new-task');
+                //let newTask = document.getElementById('new-task');
 
-				console.log('adding a task...' + newTask.value );
+				//console.log('adding a task...' + newTask.value );
 				  //task.push(newTask.value);
-              if (newTask.value === "") {
-				  alert("You did not enter any items!"
-				  )
-			  }
-			  else {
+              //if (newTask.value === "") {
+				  //alert("You did not enter any items!"
+				  //)
+			  //}
+			  //else {
 //instead of pushing string we want to  we turn into object
-			     tasks.push({ //tasks is the global array that holds all of our tasks
-					id: Date.now(), //id to keep track and know one task from another
-					name: newTask.value, //task value whatever user typed in
-					status: false, //is the task done could be completed instead of status
-					created: new Date(), //whats returned is the time
-				});
-			  }
+			     //tasks.push({ //tasks is the global array that holds all of our tasks
+					//id: Date.now(), //id to keep track and know one task from another
+					//name: newTask.value, //task value whatever user typed in
+					//status: false, //is the task done could be completed instead of status
+					//created: new Date(), //whats returned is the time
+				//});
+			  //}
              //document.getElementById("task-list").appendChild(li);
 
-			 newTask.value = '';
+			 //newTask.value = '';
 
-			 console.log(tasks);
+			 //console.log(tasks);
 				
-			 listTasks();
+			 //listTasks();
 				//document.getElementById('new-task').value = "";
-			}
+			//}
 
-		function listTasks() {
+		/*function listTasks() {
 //hook into ul
 			let taskList = document.getElementById('task-list');
 
@@ -95,7 +94,7 @@
             //newTask.appendChild(taskDone);
 
             /*console.log(checkbox);*/
-            taskDone.addEventListener('change', function(event) {
+            /*taskDone.addEventListener('change', function(event) {
 
             	if (event.target.checked) {
 					task.status = true;//pulling from object and saying keep box checked
@@ -117,7 +116,7 @@
 		   }
           //taskText.classList.add('task-item');
 	//creating time stamp and calling new function below
-          taskText.innerText = task.name + " - created: " + toPrettyDate(task.created);
+          /*taskText.innerText = task.name + " - created: " + toPrettyDate(task.created);
 
           let taskRemove = document.createElement('button');
 		  taskRemove.dataset.id = task.id;
@@ -129,16 +128,16 @@
 
           newTask.appendChild(taskDone);
           newTask.appendChild(taskText);
-          newTask.appendChild(taskRemove);
+          newTask.appendChild(taskRemove);*/
 
-          taskList.appendChild(newTask);
+          //taskList.appendChild(newTask);
 		  //console.log(taskRemove.addEventListener);
 
-      });
-     } 
+      //});
+     //}
 //creat new function to create time and date
 //with paramenter of date since its a date object	
-       function toPrettyDate(date) {
+       /*function toPrettyDate(date) {
 		   return toShortDate(date) + " " + toShortTime(date);
 	   }
 
@@ -149,46 +148,46 @@
 
 			let shortDate = month + "/" + day + "/" + year;
 			return shortDate;
-	   }
+	   //}
  
-       function toShortTime(date) {  
+       /*function toShortTime(date) {  
 		    let hours = date.getHours();
 			let minutes =  date.getMinutes();
 			let seconds =  date.getSeconds();
 			let ampm = "am";
 
-			if (hours > 12) {
-				hours -= 12;
-				ampm = "pm";
-			}
-			if (minutes < 10) {
-				minutes = "0" + minutes;
-			}
-			if (seconds < 10) {
-				seconds = "0" + seconds;
-			}
-			let time = hours + ":" + minutes + ":" + seconds + " " + ampm;
-		    return time;
-	   }
+			//if (hours > 12) {
+				//hours -= 12;
+				//ampm = "pm";
+			//}
+			//if (minutes < 10) {
+				//minutes = "0" + minutes;
+			//}
+			//if (seconds < 10) {
+			//	seconds = "0" + seconds;
+			//}
+			//let time = hours + ":" + minutes + ":" + seconds + " " + ampm;
+		    //return time;
+	   //}*/
 
-       function removeTask(event) {
-            	tasks = tasks.filter(function(task) {
+       //function removeTask(event) {
+            	//tasks = tasks.filter(function(task) {
 
             		//if (task == event.target.parentElement.previousSibling.innerText) {
-                     if (task.id == event.target.parentElement.dataset.id) {
-            			return false;
-            		}
-            		else {
-            			return true;
-            		}
+                //     if (task.id == event.target.parentElement.dataset.id) {
+            	//		return false;
+            	//	}
+            	//	else {
+            	//		return true;
+            //		}
 
-            });
+         //   });
 
 //calling previous function
-            listTasks();
+            //listTasks();
 			//console.log(event.target.dataset.id);
 
-            }
+            //}
 
 	</script>
  </body>
